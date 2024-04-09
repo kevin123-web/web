@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animo!</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="pantalla">
+        <div class="contenido-pantalla">
+            <canvas id="lienzo" width="600" height="200"></canvas>
+            <img src="oso-thnaks.gif" alt="GIF" class="gif">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var canvas = document.getElementById('lienzo');
+            var ctx = canvas.getContext('2d');
+            var phrase = "Muchas Gracias espero!";
+            var fontSize = 55;
+            var textWidth = ctx.measureText(phrase).width;
+            var x = (canvas.width - textWidth) / 500;
+            var y = canvas.height / 5 + fontSize / 10;
+
+            // Función para dibujar la frase letra por letra
+            function drawPhrase() {
+                ctx.font = fontSize + 'px Arial';
+                ctx.fillStyle = 'black';
+                var delay = 0;
+                for (var i = 0; i < phrase.length; i++) {
+                    var letter = phrase[i];
+                    drawLetter(letter, x, delay);
+                    delay += 100; // Incrementar el retraso para cada letra
+                    x += ctx.measureText(letter).width;
+                }
+            }
+
+            // Función para dibujar una letra con retraso
+            function drawLetter(letter, x, delay) {
+                setTimeout(function() {
+                    ctx.fillText(letter, x, y);
+                }, delay);
+            }
+
+            // Inicia el dibujo de la frase
+            drawPhrase();
+
+            var gif = document.querySelector('.gif');
+
+            // Función para reiniciar el GIF cuando termina
+            function restartGif() {
+                gif.src = gif.src;
+            }
+
+            // Reiniciar el GIF cuando termina
+            gif.addEventListener('ended', restartGif);
+        });
+    </script>
+</body>
+</html>

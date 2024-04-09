@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.pantalla {
+    display: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.oculto {
+    display: none;
+}
+
+.osito {
+    width: 300px;
+}
+
+.ositos {
+    width: 300px;
+}
+
+.frase {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745; /* Color de fondo del botón verde */
+    color: #fff; /* Color del texto del botón */
+    font-size: 18px; /* Tamaño del texto del botón */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px; /* Espacio entre el texto y el botón */
+}
+
+.verde {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.rojo {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.final {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.gif {
+    display: block;
+    margin: 0 auto;
+    width: 500px; /* Ajusta el ancho según sea necesario */
+    height: auto; /* Para mantener la proporción del GIF */
+}
+

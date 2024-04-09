@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animo!</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .contenido-pantalla {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .ositos {
+            max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+        }
+        .button {
+            margin-top: 20px; /* Añade un espacio entre los botones y el párrafo */
+        }
+    </style>
+</head>
+<body>
+    <div class="pantalla">
+        <div class="contenido-pantalla">
+            <img src="osito2.gif" alt="Ositos abrazándose" class="ositos">
+            <p class="frase">"Marjorie, cada día deseo más escuchar el sonido de tu voz, porque sé que será como música para mis oídos. Estoy seguro de que tu voz será tan hermosa como el resto de ti, y no puedo esperar para sentir el amor y la calidez que transmite. ¿Podrías hacerme el honor de regalarme un pequeño audio? Sería un regalo invaluable para mí y llenaría mi día de felicidad. Te amo más de lo que las palabras pueden expresar, y escuchar tu voz sería como un dulce susurro de amor en mi oído. 💖🎶"</p>
+            <a href="pantalla3.html" class="button verde" id="siBtn">¡Sí, por favor! 😊</a>
+            <a href="#" class="button rojo" id="noBtn">No quiero 😔</a>
+        </div>
+    </div>
+
+    <script>
+        var siBtn = document.getElementById('siBtn');
+        var noBtn = document.getElementById('noBtn');
+        var siBtnClicked = false;
+
+        noBtn.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevenir la acción predeterminada del enlace
+            if (!siBtnClicked) {
+                siBtn.style.fontSize = (parseInt(window.getComputedStyle(siBtn).fontSize) + 2) + 'px';
+            }
+        });
+
+        siBtn.addEventListener('click', function(event) {
+            siBtnClicked = true;
+        });
+    </script>
+</body>
+</html>
+
